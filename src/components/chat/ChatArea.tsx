@@ -62,7 +62,7 @@ const ChatArea: React.FC = () => {
         {
           id: Date.now().toString(),
           content: randomResponse,
-          sender: 'ai',
+          sender: 'ai' as const,
           timestamp: new Date()
         }
       ]);
@@ -77,7 +77,7 @@ const ChatArea: React.FC = () => {
     
     setShowWelcome(false);
     
-    const userMessage = {
+    const userMessage: Message = {
       id: Date.now().toString(),
       content: input.trim(),
       sender: 'user',
